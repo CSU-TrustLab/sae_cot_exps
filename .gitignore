@@ -1,11 +1,24 @@
-# Downloaded model weights and HuggingFace cache
-data/
+# HuggingFace cache directories inside data/
+data/**/hub/
+data/**/xet/
+data/**/.locks/
+data/**/models--*/
+data/**/CACHEDIR.TAG
 
-# JSONL / compressed data files (if placed outside data/)
+# Heavy data files inside data/
+data/**/*.jsonl.gz
+data/**/*.jsonl
+data/**/*.safetensors
+data/**/*.bin
+data/**/*.pt
+data/**/*.ckpt
+data/**/*.pth
+
+# JSONL / heavy files outside data/
 *.jsonl
 *.jsonl.gz
 
-# Model weight formats
+# Model weight formats (outside data/)
 *.safetensors
 *.bin
 *.pt

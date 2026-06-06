@@ -1,0 +1,17 @@
+{
+  "input_dir_with_source_exports": "/external/exports/qwen3-1.7b/14-resid-batchtopk-65k__l0-80",
+  "s3_exports_path": null,
+  "api_provider": "openrouter",
+  "start_index": 0,
+  "end_index": 65535,
+  "explainer_model_name": "google/gemini-2.5-flash-lite",
+  "explainer_type_name": "np_acts-logits-general",
+  "reasoning_effort": "low",
+  "max_top_activations_to_show_explainer_per_feature": 10,
+  "autointerp_batch_size": 256,
+  "gzip_output": true,
+  "ignore_first_n_tokens": 0,
+  "generate_embeddings": true,
+  "frac_nonzero_threshold": 1e-06,
+  "activation_selection_mode": "top"
+}
