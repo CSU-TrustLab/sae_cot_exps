@@ -1,6 +1,7 @@
 # deepseek-r1-distill-llama-8b
 
-Contains cached weights and feature explanations for the DeepSeek-R1-Distill-Llama-8B model and its Llama-Scope SAEs.
+Model weights and feature explanation JSONL files for DeepSeek-R1-Distill-Llama-8B and its Llama-Scope SAEs.
+Used in `src/experiment003.py` and `src/experiment004.py`.
 
 ## Model weights
 
