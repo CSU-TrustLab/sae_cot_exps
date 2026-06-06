@@ -1,7 +1,7 @@
 # 20-llamascope-slimpj-openr1-res-32k
 
 Layer-20 residual-stream SAE with 32k features for DeepSeek-R1-Distill-Llama-8B,
-trained on SlimPajama + OpenR1 data.
+trained on 800M SlimPajama tokens (SAE ID: `l20r_800m_slimpajama`).
 
 SAE release: `llama_scope_r1_distill` via SAELens.
 
