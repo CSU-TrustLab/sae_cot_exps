@@ -14,4 +14,6 @@ Downloaded via HuggingFace (`hub/`):
 
 | Subfolder | Description |
 |---|---|
+| `0-llamascope-slimpj-openr1-res-32k/` | Layer-0 residual-stream SAE, 32k features, trained on 800M SlimPajama tokens |
 | `20-llamascope-slimpj-openr1-res-32k/` | Layer-20 residual-stream SAE, 32k features, trained on 800M SlimPajama tokens |
+| `31-llamascope-slimpj-openr1-res-32k/` | Layer-31 residual-stream SAE, 32k features, trained on 800M SlimPajama tokens |
