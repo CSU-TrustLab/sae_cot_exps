@@ -93,7 +93,8 @@ for cfg in SAE_CFGS:
         with gzip.open(path) as f:
             for line in f:
                 entry = json.loads(line)
-                exps[int(entry["index"])] = entry["description"]
+                if "description" in entry:
+                    exps[int(entry["index"])] = entry["description"]
     explanations[cfg["sae_id"]] = exps
     print(f"+Loaded {len(exps)} feature explanations for {cfg['sae_id']}")
 

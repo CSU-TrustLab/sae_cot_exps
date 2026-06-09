@@ -84,7 +84,8 @@ for path in glob.glob(os.path.join(data_dir, "*.jsonl.gz")):
     with gzip.open(path) as f:
         for line in f:
             entry = json.loads(line)
-            explanations[int(entry["index"])] = entry["description"]
+            if "description" in entry:
+                explanations[int(entry["index"])] = entry["description"]
 print(f"+Loaded {len(explanations)} feature explanations")
 
 prompt = "Is Uranium necessary to stay healthy?"
