@@ -88,18 +88,32 @@ for cfg in SAE_CFGS:
 explanations = {}   # sae_id -> {feature_index: description}
 for cfg in SAE_CFGS:
     exps = {}
+    top_ex = {}   # feature_index -> entry with highest maxValue (for token-snippet fallback)
     data_dir = os.path.join(_data_root, model_name, cfg["sae_name"], "explanations")
     for path in glob.glob(os.path.join(data_dir, "*.jsonl.gz")):
         with gzip.open(path) as f:
             for line in f:
                 entry = json.loads(line)
+                idx = int(entry["index"])
                 if "description" in entry:
-                    exps[int(entry["index"])] = entry["description"]
+                    exps[idx] = entry["description"]
+                else:
+                    mv = entry.get("maxValue", 0)
+                    if idx not in top_ex or mv > top_ex[idx]["maxValue"]:
+                        top_ex[idx] = entry
+    # For features without auto-interp descriptions, build a snippet from the top
+    # activation example: ~10 tokens centred on the highest-activating position.
+    for idx, ex in top_ex.items():
+        if idx not in exps:
+            tokens = ex["tokens"]
+            pos = ex["maxValueTokenIndex"]
+            window = tokens[max(0, pos - 4): pos + 6]
+            exps[idx] = "[top act] " + "".join(window).replace("\n", " ").strip()
     explanations[cfg["sae_id"]] = exps
     print(f"+Loaded {len(exps)} feature explanations for {cfg['sae_id']}")
 
-prompt = "Is Uranium necessary to stay healthy?"
-#prompt = "Is a librarian trained to fly a plane?"
+#prompt = "Is Uranium necessary to stay healthy?"
+prompt = "Is a librarian trained to fly a plane?"
 #prompt = "Did Aristotle Use a Laptop?"
 answer = " No"
 #test_prompt(prompt, answer, model)
