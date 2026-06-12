@@ -1,0 +1,1 @@
+{"l2_loss": 391.3636363636364, "l1_loss": 4441.69696969697, "l0": 85.64892370050603, "frac_variance_explained": 0.7846827651515151, "cossim": 0.9219933712121212, "l2_ratio": 0.9254261363636364, "relative_reconstruction_bias": 1.0050899621212122, "frac_alive": 0.99993896484375, "hyperparameters": {"n_inputs": 200, "context_length": 2048}}

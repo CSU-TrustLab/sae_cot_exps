@@ -1,0 +1,10 @@
+{
+  "input_dir_with_source_exports": "/Users/johnnylin/Documents/Projects/neuronpedia/utils/neuronpedia-utils/neuronpedia_utils/exports/deepseek-r1-distill-llama-8b/0-llamascope-slimpj-openr1-res-32k",
+  "start_index": 0,
+  "end_index": null,
+  "explainer_model_name": "gemini-2.0-flash",
+  "explainer_type_name": "oai_token-act-pair",
+  "max_top_activations_to_show_explainer_per_feature": 10,
+  "autointerp_batch_size": 128,
+  "gzip_output": true
+}

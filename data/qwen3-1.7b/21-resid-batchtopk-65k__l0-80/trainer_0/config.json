@@ -1,0 +1,32 @@
+{
+    "trainer": {
+        "trainer_class": "BatchTopKTrainer",
+        "dict_class": "BatchTopKSAE",
+        "lr": 5e-05,
+        "steps": 244140,
+        "auxk_alpha": 0.03125,
+        "warmup_steps": 1000,
+        "decay_start": 195312,
+        "threshold_beta": 0.999,
+        "threshold_start_step": 1000,
+        "top_k_aux": 1024,
+        "seed": 0,
+        "activation_dim": 2048,
+        "dict_size": 16384,
+        "k": 80,
+        "device": "cuda:0",
+        "layer": 21,
+        "lm_name": "Qwen/Qwen3-1.7B",
+        "wandb_name": "BatchTopKTrainer-Qwen/Qwen3-1.7B-resid_post_layer_21_trainer_0",
+        "submodule_name": "resid_post_layer_21"
+    },
+    "buffer": {
+        "d_submodule": 2048,
+        "io": "out",
+        "n_ctxs": 122,
+        "ctx_len": 2048,
+        "refresh_batch_size": 16,
+        "out_batch_size": 2048,
+        "device": "cuda:0"
+    }
+}
